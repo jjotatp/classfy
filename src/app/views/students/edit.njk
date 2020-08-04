@@ -1,0 +1,48 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+
+    <title>Professores</title>
+    
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="card">
+        <section 
+            style="width: 100%; border-radius: 8px 0px 0px 8px; background: url('{{ student.avatar_url }}') no-repeat top center / cover">
+            
+        </section>
+
+        <section class="infos">
+            <form method="POST" action="/students?_method=PUT">
+
+                <h1>Cadastro de Professor</h1>
+                {% include 'students/fields.njk' %}
+
+                <input type="hidden" name="id" value="{{ student.id }}">
+            </form>
+
+            {# Cria-se um novo form para poder usar o methodOverride DELETE #}
+            <form id="formDelete" action="/students?_method=DELETE" method="POST">
+                <input type="hidden" name="id" value="{{ student.id }}">
+                <button type="submit" class="del">Deletar</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        // Btn de Confirmar Delete
+        const formDelete = document.querySelector('#formDelete')
+
+        formDelete.addEventListener("submit", function(event){
+            const confirmation = confirm("Deseja Deletetar?")
+            if(!confirmation) {
+                event.preventDefault()
+            }
+        })
+    </script>
+
+{% endblock %}

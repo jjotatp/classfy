@@ -1,0 +1,67 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+
+    <title>Professores</title>
+    
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="card">
+
+        <section 
+            style="width: 100%; border-radius: 8px 0px 0px 8px; background: url('{{ student.avatar_url}}') no-repeat top center / cover">
+            
+        </section>
+
+        <section class="infos">
+            <h1>Bem Vindo {{ student.name }}</h1>
+            <div class="item">
+                <div>Nome Completo</div>
+                <div>{{ student.name }}</div>
+            </div>
+            
+            <div class="item">
+                <div>Email</div>
+                <div>{{ student.email }}</div>
+            </div>
+            
+            <div class="item">
+                <div>Idade</div>
+                <div>{{ student.age }}</div>
+            </div>
+
+            <div class="item">
+                <div>Ano Escolar</div>
+                <div>{{ student.level }}</div>
+            </div>
+
+            <div class="item">
+                <div>Carga horária</div>
+                <div>
+                    <span>
+                        {{ student.time_class }}h
+                    </span>
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Professos</div>
+                <div>{{ student.teacher_name }}</div>
+            </div>
+
+            <div class="item">
+                <div>Desde</div>
+                <div>{{ student.created_at }}</div>
+            </div>
+            
+            <a href="/students/{{ student.id }}/edit" class="button">Editar</a>
+            
+        </section>
+
+    </div>
+
+    {% endblock %}

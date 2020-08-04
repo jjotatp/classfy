@@ -1,0 +1,58 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+
+    <title>Professores</title>
+    
+{% endblock %}
+
+{% block content %}
+    <section class="table-home">
+        
+        <div class="header">
+            <a href="/students/create" class="button">Novo</a>
+            
+            <form action="/students" method="GET">
+                <input
+                    type="text"
+                    name="filter"
+                    placeholder="Pesquise por nome"
+                    value="{{filter}}"
+                />
+                <button type="submit">Procurar</button>
+            </form>
+        </div>
+
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>Aluno</th>
+                    <th>Email</th>
+                    <th>Ano Escolar</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+            {% for student in students %}
+                <tr>
+                    <td>
+                        <span style="background-image: url('{{ student.avatar_url }}');" alt="{{ student.name }}"></span>
+                        {{ student.name }}</td>
+                    <td>{{ student.email }}</td>
+                    <td>{{ student.level }}</td>
+                    <td><a href="/students/{{ student.id }}">Conhecer</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+
+        <div class="pagination"
+             data-page={{pagination.page}}
+             data-total={{pagination.total}}
+             data-filter={{filter}}>
+        </div>
+    </section>
+
+    {% endblock %}

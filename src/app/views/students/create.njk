@@ -1,0 +1,28 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+
+    <title>Professores</title>
+    
+{% endblock %}
+
+
+
+{% block content %}
+
+    <form action="/students" method="POST">
+
+        <div class="card">
+            <section 
+                style="width: 100%; border-radius: 8px 0px 0px 8px; background: url('https://source.unsplash.com/collection/3410937/200x200') no-repeat top center / cover">
+                
+            </section>
+
+            <section class="infos">
+                <h1>Cadastro de Aluno</h1>
+                {% include 'students/fields.njk' %}
+            </section>
+        </div>
+    </form>
+
+    {% endblock %}

@@ -1,0 +1,75 @@
+<div class="item">
+    <div>Avatar URL</div>
+    <div>
+        <input type="url"
+               name="avatar_url"
+               value="{{ teacher.avatar_url }}"
+               placeholder="http://"
+        />
+    </div>
+</div>
+
+<div class="item">
+    <div>Nome Completo</div>
+    <div>
+        <input type="text"
+               name="name"
+               value="{{ teacher.name }}"
+               placeholder="Digite seu Nome"
+        />
+    </div>
+</div>
+
+<div class="item">
+    <div>Idade</div>
+    <div>
+        <input type="date"
+               name="birth"
+               value="{{ teacher.birth }}"
+        />
+    </div>
+</div>
+
+<div class="item">
+    <div>Escolaridade</div>
+    <div>
+        <select name="grade">
+            <option value="Ensino Médio Completo" {% if teacher.grade == "Ensino Médio Completo" %} selected {% endif %}>Ensino Médio Completo</option>
+            <option value="Ensino Superior Completo" {% if teacher.grade == "Ensino Superior Completo" %} selected {% endif %}>Ensino Superior Completo</option>
+            <option value="Mestrado" {% if teacher.grade == "Mestrado" %} selected {% endif %}>Mestrado</option>
+            <option value="Doutorado" {% if teacher.grade == "Doutorado" %} selected {% endif %}>Doutorado</option>
+        </select>
+    </div>
+</div>
+<div class="item">
+    <div>Tipo de Aula</div>
+    <div>
+        <span>
+            <input type="radio"
+               name="class_type"
+               value="Presencial"
+               {% if teacher.class_type == 'Presencial' %} checked {% endif %}
+            />Presencial
+        </span>
+        
+        <span>
+            <input type="radio"
+               name="class_type"
+               value="EAD"
+               {% if teacher.class_type == 'EAD' %} checked {% endif %}
+            />À Distância
+        </span>
+    </div>
+</div>
+<div class="item">
+    <div>Acompanhamentos e Matérias</div>
+    <div>
+        <input type="text"
+               name="subjects"
+               value="{{ teacher.subjects }}"
+               placeholder="Separe por vírgula cada matéria"
+        />
+    </div>
+</div>
+
+<button type="submit">Salvar</button>
