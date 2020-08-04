@@ -4,7 +4,7 @@ ___
 
 
 <p align="center">
-  <!-- <img src="https://github.com/jjotatp/gymmanager/blob/master/gymmanager.jpeg?raw=true" width="300" heigth="300"> -->
+  <img src="https://github.com/jjotatp/classfy/blob/master/classfy.png?raw=true" width="300" heigth="300">
 </p>
 
 
